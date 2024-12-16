@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css" />
+    <link rel="stylesheet" href="courseregister.css" />
+    <script src="registerCourse.js" defer></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="modal-container" id="login-modal">
+        <div class="modal">
+          <h2>Courese Registration</h2>
+          <form
+            id="registerCourseForm"
+            onsubmit="handleSubmitRegisterCourse(event)"
+          >
+            <label for="username">UserName:</label>
+            <input type="text" id="username" name="username" required />
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required />
+            <label for="session">Session:</label>
+            <select name="session" id="time" required>
+              <option value="" disabled selected>Select Session</option>
+              <option value="Morning">Morning</option>
+              <option value="Afternoon">Afternoon</option>
+            </select>
+
+            <select id="program" name="program" required>
+              <option value="" disabled selected>Select Program</option>
+              <option value="Basic Computing">Basic Computing</option>
+              <option value="Cyber Security">Cyber Security</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Data Analysis">Data Analysis</option>
+            </select>
+            <button type="submit">REGISTER</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
