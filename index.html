@@ -19,18 +19,18 @@
         flex-direction: column;
         height: 500px;
       }
-      .card h1{
+      .card h1 {
         font-size: 50px;
       }
-      .card img{
+      .card img {
         width: 350px;
         object-fit: cover;
       }
-      .innovation{
-        color: #F3C623;
+      .innovation {
+        color: #f3c623;
       }
-      .creativity{
-      color: #347928;
+      .creativity {
+        color: #347928;
       }
     </style>
   </head>
@@ -40,14 +40,9 @@
         <div class="logo">
           <a href=""><img src="./images/b1.png" alt="AfriTech Hub logo" /></a>
         </div>
-       
+
         <div class="cta">
-          <button
-           
-            id="login-btn"
-            class="btn-login"
-            onclick="openLoginModal()"
-          >
+          <button id="login-btn" class="btn-login" onclick="openLoginModal()">
             Login
           </button>
         </div>
@@ -93,7 +88,7 @@
           <div class="modal">
             <span class="close" onclick="closeRegisternModal()">&times;</span>
             <h2>Register</h2>
-            <form id="registerForm" onsubmit="handleSubmitRegister(event)">
+            <form  id="registerForm">
               <label for="username">UserName:</label>
               <input type="text" id="username" name="username" required />
 
@@ -103,7 +98,7 @@
               <label for="password">Password:</label>
               <input type="password" id="password" name="password" required />
 
-              <button type="submit">Register</button>
+              <button  type="submit">Register</button>
             </form>
 
             <p>
@@ -122,7 +117,10 @@
           <h1>
             Welcome To AfriTech Hub <span class="username" id="username"></span>
           </h1>
-             <h3>Place of  <span class="innovation">innovation</span>  & <span class="creativity">creativity</span></h3>
+          <h3>
+            Place of <span class="innovation">innovation</span> &
+            <span class="creativity">creativity</span>
+          </h3>
           <div class="card-image">
             <img src="./images/b1.png" alt="AfriTech logo" />
           </div>
@@ -130,5 +128,6 @@
       </section>
     </main>
     <script src="main.js"></script>
+    <script src="registerCourse.js"></script>
   </body>
 </html>

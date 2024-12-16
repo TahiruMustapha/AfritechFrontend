@@ -104,72 +104,97 @@ const handleSubmitLogin = async (e) => {
     alert("An error occurred.Please try again sometime.");
   }
 };
- document.getElementById("logout").addEventListener("click",function (){
- localStorage.removeItem("user");
- window.location.href = "index.html";
- })
- 
-
-
-const handleSubmitRegister = async (e) => {
-  e.preventDefault();
-  const form = document.getElementById("registerForm");
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData);
-  try {
-    // Send POST request to the register endpoint
-    const response = await fetch(
-      "https://afritechbackend.onrender.com/api/auth/register",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
-    //HANDLE RESPONSE
-    const result = await response.json();
-    if (response.ok) {
-      alert("User created successfully");
-      form.reset();
-      openLoginModal();
-    } else {
-      alert(`Error: ${result.message}`);
-    }
-  } catch (error) {
-    console.log("Error:", error);
-    alert("An error occurred. Please try again later.");
-  }
-};
-//   const handleSubmitRegisterCourse = async (e) => {
+document.getElementById("logout").addEventListener("click", function () {
+  localStorage.removeItem("user");
+  window.location.href = "index.html";
+});
+// const handleSubmitRegister = async (e) => {
 //   e.preventDefault();
-//   console.log("Form submitted!");
-//   const form = document.getElementById("registerCourseForm");
+  
+//   // Get the form and data
+//   const form = document.getElementById("registerForm");
 //   const formData = new FormData(form);
 //   const data = Object.fromEntries(formData);
+
+//   // Optional: Perform client-side validation
+//   if (!data.username || !data.password || !data.email) {
+//     alert("Please fill in all required fields.");
+//     return;
+//   }
+
 //   try {
-//     // Send POST request to the register course endpoint
-//     const response = await fetch("http://localhost:5001/api/courseRegisteration/registerCourse/", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(data),
-//     });
-//     //HANDLE RESPONSE
+//     // Send POST request to the register endpoint
+//     const response = await fetch(
+//       "https://afritechbackend.onrender.com/api/auth/register",
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(data),
+//       }
+//     );
+
+//     // Parse the response
 //     const result = await response.json();
+
 //     if (response.ok) {
-//       console.log("Registration successful");
-//       alert(result.message);
-//       // form.reset();
-//       // closeLoginModal();
-//       // window.location.href = "index.html";
+//       // Success
+//       alert("User created successfully");
+//       form.reset();
+//       openLoginModal(); // Assuming this is a function to display the login modal
 //     } else {
-//       alert(`Error: ${result.message}`);
+//       // Handle server-side validation errors or other issues
+//       alert(`Error: ${result.message || "Unable to register. Please try again."}`);
 //     }
 //   } catch (error) {
-//     console.log("Error:", error);
-//     alert("An error occurred. Please try again later.");
+//     // Handle network or unexpected errors
+//     console.error("Error:", error);
+//     alert("A network error occurred. Please try again later.");
 //   }
 // };
+// window.addEventListener("DOMContentLoaded", () => {
+//   const form = document.getElementById("registerForm");
+//   form.addEventListener("submit", handleSubmitRegister);
+// });
+
+// document.getElementById("registerForm").addEventListener("submit", async(e)=>{
+//   e.preventDefault();
+//   const form = document.getElementById("registerForm");
+//   const formData = new FormData(form);
+//   const data = Object.fromEntries(formData);
+//   if (!data.username || !data.password || !data.email) {
+//     alert("Please fill in all required fields.");
+//     return;
+//   }
+//   try {
+//     // Send POST request to the register endpoint
+//     const response = await fetch(
+//       "https://afritechbackend.onrender.com/api/auth/register",
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(data),
+//       }
+//     );
+
+//     // Parse the response
+//     const result = await response.json();
+
+//     if (response.ok) {
+//       // Success
+//       alert("User created successfully");
+//       form.reset();
+//       openLoginModal(); // Assuming this is a function to display the login modal
+//     } else {
+//       // Handle server-side validation errors or other issues
+//       alert(`Error: ${result.message || "Unable to register. Please try again."}`);
+//     }
+//   } catch (error) {
+//     // Handle network or unexpected errors
+//     console.error("Error:", error);
+//     alert("A network error occurred. Please try again later.");
+//   }
+// });
